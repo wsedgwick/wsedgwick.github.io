@@ -1,6 +1,6 @@
 ---
 title: "wsedgwick.github.io"
-theme: "tresles"
+theme: "trestles"
 ---
 
 This is a Quarto website.
