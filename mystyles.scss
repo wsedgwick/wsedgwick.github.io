@@ -1,0 +1,31 @@
+
+/*-- scss:defaults --*/
+
+  // Fonts
+  @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+  // Colors
+  $light-blue: #1fd5ed;
+  $purple: #d921bd;
+  $light-green: #38e62c;
+  $red: #e0140d;
+  
+  // Base Document Colors
+  $navbar-bg: $light-blue;
+  $body-bg: $purple;
+  
+  /*-- scss:rules --*/
+  
+  h1, h3 {
+    letter-spacing: 8px;
+    font-weight: 700;
+    color: light-green;
+  }
+  
+  .title {
+    color: red;
+  }
+
+
+
+

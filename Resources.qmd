@@ -1,0 +1,13 @@
+---
+title: "Resources"
+editor: visual
+jupyter: python3
+---
+
+<h1>this is my h1 element</h1>
+
+<h1 class="title">this is a red h1 element</h1>
+
+<p>this is my paragraph</p>
+
+<p class = "title">this is my red paragraph</p>

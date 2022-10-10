@@ -12,9 +12,12 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme:
+      - mystyles.scss
+    mainfont: Silkscreen
     css: styles.css
     toc: true
+    
 
 editor: visual
 

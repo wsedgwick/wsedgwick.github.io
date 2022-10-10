@@ -1,7 +1,18 @@
 ---
-title: "wsedgwick.github.io"
+title: "Wade Sedgwick"
 theme: "trestles"
+about:
+  template: trestles
+  image-shape: rounded
+  image-width: 15em
+  links:
+    - text: LinkedIn
+      href: https://www.linkedin.com/in/wade-sedgwick/
+    - text: Email
+      href: mailto:wsedgwick0@gmail.com
 ---
+
+Different pages on website: Home, Drone Conservation Work, Photography, About
 
 This is a Quarto website.
 
@@ -11,6 +22,4 @@ To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 1 + 1
 ```
 
-Wade Sedgwick
-
-I am a wildlife
+I am a wildlife conservationist who uses drones to improve wildlife survey design. I work with researchers around the world to implement novel technologies to improve traditional survey methods. I am currently getting a Master in Environmental Data Science at the Bren School for Environmental Science and Management, UC Santa Barbara. With my degree, I'm hoping to improve survey method workflows so that the data collected can be analyzed with AI.
