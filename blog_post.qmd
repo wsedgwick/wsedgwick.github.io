@@ -1,0 +1,6 @@
+---
+title: "env. statistics blog post"
+editor: visual
+---
+
+This will be the page for my Env. Statistics Blog post on whether lower-income counties have less access to open space in California.
