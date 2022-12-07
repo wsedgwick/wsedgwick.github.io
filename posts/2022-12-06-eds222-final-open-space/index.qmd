@@ -1,0 +1,16 @@
+---
+title: "Open Space Access in California"
+description: "Do lower-income communities have less access to open space in California?"
+author:
+  - name: Wade Sedgwick
+    url: https://wsedgwick.github.io/
+    affiliation: Master of Environmental Data Science Program, Bren School
+    affiliation-url: https://ucsb-meds.github.io/ 
+date: 12-06-2022
+categories: [Quarto, R, MEDS] # self-defined categories
+citation: 
+  url: https://wsedgwick.github.io/posts/2022-10-24-quarto-blogs/ 
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+
+Blog post

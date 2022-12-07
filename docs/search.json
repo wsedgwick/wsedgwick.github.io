@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "posts/2022-12-06-eds223-final/index.html",
+    "href": "posts/2022-12-06-eds223-final/index.html",
+    "title": "Geospatial Analysis Final Blog Post",
+    "section": "",
+    "text": "This will be my Geospatial Analysis blog post."
+  },
+  {
+    "objectID": "posts/2022-12-06-eds222-final-open-space/index.html",
+    "href": "posts/2022-12-06-eds222-final-open-space/index.html",
+    "title": "Open Space Access in California",
+    "section": "",
+    "text": "CitationBibTeX citation:@online{sedgwick2022,\n  author = {Wade Sedgwick},\n  title = {Open {Space} {Access} in {California}},\n  date = {12/06/2022},\n  url = {https://wsedgwick.github.io/posts/2022-10-24-quarto-blogs/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nWade Sedgwick. 12AD–6AD. “Open Space Access in California.”\n12AD–6AD. https://wsedgwick.github.io/posts/2022-10-24-quarto-blogs/."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "wsedgwick.github.io",
@@ -19,5 +33,12 @@
     "title": "About",
     "section": "",
     "text": "1 + 1\n\n[1] 2\n\n# This is new material."
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "My Blog",
+    "section": "",
+    "text": "Quarto\n\n\nR\n\n\nMEDS\n\n\n\nDo lower-income communities have less access to open space in California?\n\n\n\nWade Sedgwick\n\n\nDec 6, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
