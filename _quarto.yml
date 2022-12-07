@@ -12,7 +12,7 @@ website:
         text: About Me
       - href: hello.qmd
       - href: blog_post.qmd
-      - posts.qmd
+      - href: posts.qmd
 
 format:
   html:
