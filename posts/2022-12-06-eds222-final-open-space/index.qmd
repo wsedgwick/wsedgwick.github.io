@@ -63,6 +63,5 @@ The scale at which I conducted my analysis showed too many variables to show a r
 ### References
 
 ### Additional Visualizations
-=======
-Blog post
+
 >>>>>>> 71d80474df4a5e65770a4859f735efc6373332a2
