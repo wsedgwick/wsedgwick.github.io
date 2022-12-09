@@ -1,0 +1,64 @@
+---
+title: "Open Space Access in California"
+description: "Do lower-income communities have less access to open space in California?"
+author:
+  - name: Wade Sedgwick
+    url: https://wsedgwick.github.io/
+    affiliation: Master of Environmental Data Science Program, Bren School
+    affiliation-url: https://ucsb-meds.github.io/ 
+date: 12-06-2022
+categories: [Quarto, R, MEDS] # self-defined categories
+citation: 
+  url: https://wsedgwick.github.io/posts/2022-10-24-quarto-blogs/ 
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+
+The purpose of this blog post is to understand and quantify whether lower-income counties in California have less access to open space. I used American Community Survey (ACS) median-income data from 2018 as well as open space data collected from 2014 to 2018 to perform a linear regression model. Because the data did not fit my question, and I wanted to get community open space, open space data was filtered to exclude all open space greater than 100 acres.
+
+```{r}
+#| echo: false
+library(tidycensus)
+library(tidyverse)
+library(ggplot2)
+library(tmap)
+library(sf)
+library(usmap)
+library(here)
+library(tigris)
+library(gridExtra)
+```
+
+### Introduction
+
+Open spaces and parks provide people with many physical and mental benefits to their health and wellbeing. Not only does exercise increase with proximity to open space, open spaces tend to have greenery and vegetation, contributing to improved air quality and lower temperatures. Additionally, closer proximity to open space as a teenager is linked to healthier adults with less risk for deathly diseases. Mentally, being outdoors in green open spaces decreases stress, depression and anxiety. Individuals who are introduced to outdoor spaces as a child were more-likely to feel more connected to nature, and to visit open spaces as an adult.
+
+Studies have shown that lower-income communities are affected negatively by their inaccessibility to open space. I will analyze this disproportional access to open space in California. This analysis will show how lower-income communities are unequally affected in ways that might be deemed as less significant, but pose an unknown negative affect on those households. Not only do we as a state and country need to address the disproportionate levels of pollution and access to healthy foods, but we also need to address other underlying causes that exacerbate this underlying discrimination. From this analysis, we can begin to actively and equitably build infrastructure that gives lower-income communities more access to open spaces.
+
+### Data
+
+To answer this question, I compared household median income to percent open space in each county. The geometries were from the 'tigris' package, where counties from filtered states are given. I used the tidycensus package to retrieve data from the American Community Survey (ACS). The data I gathered is a yearly sample of 3 million households from 2018 (the ACS has more accurate decennial country-wide census data as well). This can easily be accessed in Rstudio with the 'get_acs' function and the appropriate key. Additionally, I read in ACS 5 year tract data (2014-2018) on open spaces in California which was downloaded from the California State Parks [Park Access Tool](https://www.parksforcalifornia.org/parkaccess/?overlays1=parks%2Cnoparkaccess&overlays2=parks%2Cparksper1000). This data set has the county FIPS code, open space acreage, and geometries, which I aggregated to get open space acreage by county.
+
+```{r, results='hide'}
+ca_2018 <- get_acs(geography = "county", 
+              variables = c(medincome = "B19013_001"), 
+              state = "CA", 
+              year = 2018,
+              geometry = TRUE)
+
+ca_2018 <- ca_2018 %>%
+  mutate(NAME = str_remove_all(NAME, ", California"))
+
+ca_counties <- counties(state = "CA")
+
+open_space <- st_read(file.path("/Users/wsedgwick/Desktop/bren_meds/BREN MEDS/wsedgwick.github.io/posts/2022-12-06-eds222-final-open-space/data/ACS2018_5Y_Tract_PPK.shp"))
+```
+
+### Results
+
+Although the initial regression showed no prediction between household median income and percent open space in California, once I filtered for the open spaces that are most accessible to communities, median income did appear to be a predictor of percent open space. Even though\*\* there were a few lower median-income counties, the open spaces here were too large to be considered easily accessible to communities. Contrast this to San Francisco County, which has higher income but lower percent open space; this is due to the population density - even though there was less percent open space, people lived in much more densely populated areas and therefore have more access to community parks.
+
+The scale at which I conducted my analysis showed too many variables to show a relationship between median income and percent open space. There are too many variables at the county level to definitively analyze the relationship between median income and percent open space in the time for our final project. A more reasonable analysis would have been comparing tract within a county - there are more individual observations, and because it's a smaller area, there is less variability.
+
+### References
+
+### Additional Visualizations
