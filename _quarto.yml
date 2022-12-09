@@ -10,6 +10,10 @@ website:
         text: Home
       - href: about.qmd
         text: About Me
+<<<<<<< HEAD
+=======
+      - href: blog_post.qmd
+>>>>>>> 71d80474df4a5e65770a4859f735efc6373332a2
       - href: posts.qmd
 
 format:

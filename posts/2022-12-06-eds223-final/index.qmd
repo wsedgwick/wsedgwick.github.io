@@ -30,7 +30,10 @@ library(ggpubr)
 
 ```{r}
 # Reading in Houston tiles
+<<<<<<< HEAD
 
+=======
+>>>>>>> 71d80474df4a5e65770a4859f735efc6373332a2
 v5_before <- read_stars("data/VNP46A1/VNP46A1.A2021038.h08v05.001.2021039064328.tif")
 v6_before <- read_stars("data/VNP46A1/VNP46A1.A2021038.h08v06.001.2021039064329.tif")
 v5_after <- read_stars("data/VNP46A1/VNP46A1.A2021047.h08v05.001.2021048091106.tif")
