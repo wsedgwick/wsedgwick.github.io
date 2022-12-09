@@ -30,9 +30,9 @@ library(gridExtra)
 
 ### Introduction
 
-Open spaces and parks provide people with many physical and mental benefits to their health and wellbeing. Not only does exercise increase with proximity to open space, open spaces tend to have greenery and vegetation, contributing to improved air quality and lower temperatures. Additionally, closer proximity to open space as a teenager is linked to healthier adults with less risk for deathly diseases. Mentally, being outdoors in green open spaces decreases stress, depression and anxiety. Individuals who are introduced to outdoor spaces as a child were more-likely to feel more connected to nature, and to visit open spaces as an adult.
+Open spaces and parks provide people with many physical and mental benefits to their health and wellbeing. Not only do people in close proximity to open space get more exercise and are therefore more active, open spaces provide a community with greenery and vegetation, contributing to improved air quality and lower temperatures. Additionally, closer proximity to open space as a teenager is linked to healthier adults with less risk for serious illnesses. Mentally, being outdoors in green open spaces decreases stress, depression and anxiety. Individuals who are introduced to outdoor spaces as a child were more-likely to feel more connected to nature, and to visit open spaces as an adult.
 
-Studies have shown that lower-income communities are affected negatively by their inaccessibility to open space. I will analyze this disproportional access to open space in California. This analysis will show how lower-income communities are unequally affected in ways that might be deemed as less significant, but pose an unknown negative affect on those households. Not only do we as a state and country need to address the disproportionate levels of pollution and access to healthy foods, but we also need to address other underlying causes that exacerbate this underlying discrimination. From this analysis, we can begin to actively and equitably build infrastructure that gives lower-income communities more access to open spaces.
+Studies have shown that lower-income communities are affected negatively by their inaccessibility to open space. I will analyze this disproportional access to open space in California. This analysis will show how lower-income communities are unequally affected in ways that might be deemed as less important, but pose an unknown negative affect on those households. Not only do we as a state and country need to address the disproportionate levels of pollution and lack of access to healthy foods, we also need to address other underlying causes that exacerbate this underlying discrimination. From this analysis, we can begin to actively and equitably understand how to build infrastructure that would give lower-income communities more access to open spaces.
 
 ### Data
 
@@ -51,6 +51,62 @@ ca_2018 <- ca_2018 %>%
 ca_counties <- counties(state = "CA")
 
 open_space <- st_read(file.path("/Users/wsedgwick/Desktop/bren_meds/BREN MEDS/wsedgwick.github.io/posts/2022-12-06-eds222-final-open-space/data/ACS2018_5Y_Tract_PPK.shp"))
+```
+
+### Analysis
+
+My initial visualization involved creating a map of California counties, where the variables median income and percent open space are plotted. This revealed that there was a negative relationship between median income and percent open space. It can be seen that counties in the Bay Area, such as San Francisco, San Mateo, and Santa Clara Counties, have higher median income but lower percent open space. Similarly, Mono and Inyo Counties have low median income but have high percent access to open space.
+
+```{r}
+open_space_county <- open_space %>% 
+  group_by(COUNTYFP) %>% 
+  summarise(total_park_acres = sum(Park_Acres))
+
+open_space_county <- open_space_county %>% 
+  st_as_sf() %>% 
+  st_transform(crs = 4269)
+
+open_space_county_ng <- st_drop_geometry(open_space_county)
+
+ca_2018_ng <- ca_2018 %>% 
+  rename(medincome_2018 = "estimate",
+         moe_2018 = "moe") %>% 
+  mutate(NAME = str_remove_all(NAME, ", California")) %>% 
+  st_drop_geometry()
+
+ca_counties_joined <- ca_counties %>% 
+  dplyr::select("COUNTYFP", "GEOID", "NAME", "NAMELSAD", "ALAND", "AWATER") %>% 
+  full_join(open_space_county_ng, by = "COUNTYFP") %>%
+  full_join(ca_2018_ng, by = "GEOID") %>%
+  mutate(percent_open_space = (total_park_acres / ALAND) * 100,
+         income_lower = medincome_2018 < 71228)
+
+map_medincome <- tm_shape(ca_2018) +
+  tm_polygons(col = "estimate",
+              title = "Median Income") +
+  tm_layout(main.title = "Median Income\n(ACS 2018)")
+
+map_open_space <- tm_shape(ca_counties_joined) +
+  tm_polygons(col = "percent_open_space",
+              title = "Percent open space") +
+  tm_layout(main.title = "Percent Open Space\n(ACS 2018 5 year Tract)")
+
+tmap_arrange(map_medincome, map_open_space, ncol = 2)
+```
+
+After mapping the two variables, I plotted and ran a linear regression model to quantify the relationship. The R-squared and Adjusted R-squared values were 0.082 and 0.066, respectively, so there was little relationship between median income and percent open space with the data I used. However, the p-value is below our significance level of 0.05, which means that median income is a predictor of percent open space.
+
+```{r}
+ggplot(data = ca_counties_joined, aes(x = medincome_2018, y = percent_open_space)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Percent Open Space as a function of Median Income (2018)",
+       x = "Median Income of California Counties ($)",
+       y = "Percent Open Space") +
+  lims(x = c(40000, 120000))
+
+mod <- lm(formula = percent_open_space ~ medincome_2018, data = ca_counties_joined)
+summary(mod)
 ```
 
 ### Results
