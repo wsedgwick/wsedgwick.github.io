@@ -12,8 +12,6 @@ citation:
   url: https://wsedgwick.github.io/posts/2022-10-24-quarto-blogs/ 
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
 ---
-
-<<<<<<< HEAD
 The purpose of this blog post is to understand and quantify whether lower-income counties in California have less access to open space. I used American Community Survey (ACS) median-income data from 2018 as well as open space data collected from 2014 to 2018 to perform a linear regression model. Because the data did not fit my question, and I wanted to get community open space, open space data was filtered to exclude all open space greater than 100 acres.
 
 ```{r}
@@ -61,7 +59,3 @@ Although the initial regression showed no prediction between household median in
 The scale at which I conducted my analysis showed too many variables to show a relationship between median income and percent open space. There are too many variables at the county level to definitively analyze the relationship between median income and percent open space in the time for our final project. A more reasonable analysis would have been comparing tract within a county - there are more individual observations, and because it's a smaller area, there is less variability.
 
 ### References
-
-### Additional Visualizations
-
->>>>>>> 71d80474df4a5e65770a4859f735efc6373332a2
