@@ -12,6 +12,7 @@ citation:
   url: https://wsedgwick.github.io/posts/2022-10-24-quarto-blogs/ 
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
 ---
+
 The purpose of this blog post is to understand and quantify whether lower-income counties in California have less access to open space. I used American Community Survey (ACS) median-income data from 2018 as well as open space data collected from 2014 to 2018 to perform a linear regression model. Because the data did not fit my question, and I wanted to get community open space, open space data was filtered to exclude all open space greater than 100 acres.
 
 ```{r}
