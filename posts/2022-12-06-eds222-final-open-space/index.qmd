@@ -64,9 +64,10 @@ open_space_county <- open_space %>%
   group_by(COUNTYFP) %>% 
   summarise(total_park_acres = sum(Park_Acres))
 
+open_space
 open_space_county <- open_space_county %>% 
   st_as_sf() %>% 
-  st_transform(crs = 4269)
+  st_transform(4269)
 
 open_space_county_ng <- st_drop_geometry(open_space_county)
 
