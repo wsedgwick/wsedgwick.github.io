@@ -1,16 +1,14 @@
 ---
 title: "Open Space Access in California"
-description: "Do lower-income communities have less access to open space in California?"
-author:
-  - name: Wade Sedgwick
-    url: https://wsedgwick.github.io/
-    affiliation: Master of Environmental Data Science Program, Bren School
-    affiliation-url: https://ucsb-meds.github.io/ 
-date: 12-06-2022
-categories: [Quarto, R, MEDS] # self-defined categories
-citation: 
-  url: https://wsedgwick.github.io/posts/2022-10-24-quarto-blogs/ 
-draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+subtitle: "Do lower income communities have less access to open space?"
+author: "Wade Sedgwick"
+format:
+  html:
+    code-fold: false
+    code-summary: "Show code"
+editor: visual
+execute:
+  warning: false
 ---
 
 The purpose of this blog post is to understand and quantify whether lower-income counties in California have less access to open space. I used American Community Survey (ACS) median-income data from 2018 as well as open space data collected from 2014 to 2018 to perform a linear regression model. Because the data did not fit my question, and I wanted to get community open space, open space data was filtered to exclude all open space greater than 100 acres.
@@ -62,10 +60,9 @@ open_space_county <- open_space %>%
   group_by(COUNTYFP) %>% 
   summarise(total_park_acres = sum(Park_Acres))
 
-open_space
 open_space_county <- open_space_county %>% 
   st_as_sf() %>% 
-  st_transform(4269)
+  st_transform(crs = 4269)
 
 open_space_county_ng <- st_drop_geometry(open_space_county)
 
@@ -110,10 +107,4 @@ mod <- lm(formula = percent_open_space ~ medincome_2018, data = ca_counties_join
 summary(mod)
 ```
 
-### Results
-
-Although the initial regression showed no prediction between household median income and percent open space in California, once I filtered for the open spaces that are most accessible to communities, median income did appear to be a predictor of percent open space. Even though\*\* there were a few lower median-income counties, the open spaces here were too large to be considered easily accessible to communities. Contrast this to San Francisco County, which has higher income but lower percent open space; this is due to the population density - even though there was less percent open space, people lived in much more densely populated areas and therefore have more access to community parks.
-
-The scale at which I conducted my analysis showed too many variables to show a relationship between median income and percent open space. There are too many variables at the county level to definitively analyze the relationship between median income and percent open space in the time for our final project. A more reasonable analysis would have been comparing tract within a county - there are more individual observations, and because it's a smaller area, there is less variability.
-
-### References
+With these results, the data set did not reflect the analysis I wanted to perform. Because my focus is on open space access to communities, I filtered open spaces that might not be accessible to communities in their daily lives. All open spaces greater than 100 acres, which are less accessible to households in their daily lives, were filtered out. 79,313 acres of open space remained in the data set, while 47.7 million acres were filtered out.
