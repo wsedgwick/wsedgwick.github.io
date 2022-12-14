@@ -13,7 +13,7 @@ citation:
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
 ---
 
-### In this blog post, I will be analyzing the major power crisis that occurred in Texas on February, 2021 when significant winter storms hit the US.
+### In this blog post, I will be analyzing the major power crisis that occurred in Texas on February, 2021, when significant winter storms hit the US.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

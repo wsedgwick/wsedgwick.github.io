@@ -3,8 +3,8 @@ project:
   output-dir: docs
 
 website:
-  title: "Wade Sedgwick"
   navbar:
+    title: "Wade Sedgwick"
     left:
       - href: index.qmd
         text: Home
@@ -12,12 +12,10 @@ website:
         text: About Me
       - href: blog_post.qmd
       - href: posts.qmd
-
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
-
 editor: visual
 
