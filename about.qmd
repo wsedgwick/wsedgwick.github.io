@@ -2,10 +2,8 @@
 title: "About"
 ---
 
-About this site
+## More about me:
 
-```{r}
-1 + 1
+I have over 400 hours of expertise flying fixed-wing and quadcopter drones with various sensors dependent on the species or habitat of interest, including multispectral and thermal. Additionally, I have conducted repeat vegetation health surveys in Northern Patagonia, helped design a drone monitoring program for finding and arresting illegal fishermen in Gabon, and am working with Wildlife Conservation Society researchers in Vietnam to locate and identify the world's rarest turtle, Rafetus Swinhoei.
 
-# This is new material.
-```
+Although I am proficient in drone survey design, I hope to gain knowledge on how to extract the most information from the drone data I collect. I am currently attending the Bren School of Environmental Science & Management with a Master of Environmental Data Science. I plan to expand my knowledge of machine learning software to measure wildlife individuals from drone images through photogrammetry, convolutional neural networks, and other advanced software analysis tools.

@@ -1,10 +1,19 @@
 ---
-title: "wsedgwick.github.io"
-theme: "trestles"
+title: "Wade Sedgwick"
+image: profile.jpg
+about:
+  template: solana
+  image-shape: rounded
+  image-width: 20em
+  links:
+    - text: LinkedIn
+      href: https://www.linkedin.com/in/wade-sedgwick/
+    - text: GitHub
+      href: https://github.com/wsedgwick
+    - text: Photography Website
+      href: https://www.wadesedgwick.com
 ---
 
 Welcome to my website!
 
-I am a wildlife conservationist working with conservation organizations and government researchers around the world with the goal of improving wildlife survey methods through the use of drones. I have conducted drone surveys on a wide range of species, including southern sea lions, black-browed albatross, and freshwater turtles. I have over 400 hours of expertise flying fixed-wing and quadcopter drones with various sensors dependent on the species or habitat of interest, including multispectral and thermal. Additionally, I have conducted repeat vegetation health surveys in Northern Patagonia, helped design a drone monitoring program for finding and arresting illegal fishermen in Gabon, and am working with Wildlife Conservation Society researchers in Vietnam to locate and identify the world's rarest turtle, Rafetus Swinhoei.
-
-Although I am proficient in drone survey design, I hope to gain knowledge on how to extract the most information from the drone data I collect. I am currently attending the Bren School of Environmental Science & Management with a Master of Environmental Data Science to expand my knowledge of software to identify, enumerate, distinguish and measure wildlife individuals from drone images through photogrammetry, convolutional neural networks, and other advanced software analysis tools.
+I am a wildlife conservationist working with conservation organizations and government researchers around the world with the goal of improving wildlife survey methods through the implementation of drones. I have conducted drone surveys on a wide range of species, including southern sea lions, black-browed albatross, and critically-endangered freshwater turtles. I am currently getting a master's degree in Environmental Data Science to improve wildlife survey design post-processing, using AI software to automatically enumerate the thousands of individuals from the drone survey images.

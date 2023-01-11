@@ -1,0 +1,22 @@
+---
+title: "Current Projects"
+editor: visual
+---
+
+## Below are the current projects I am working on around the world.
+
+### Argentina:
+
+Working for a year and a half in Argentina before COVID forced me home, I collaborated with government researchers on a number of ways to improve wildlife survey design that would use drones to increase efficiency and accuracy.
+
+1.  NDVI surveys of Guanaco (a camelid) habitat were conducted at varying distances from the center to understand Guanaco distribution within various provincial parks.
+2.  Working with the governmental Patagonia Research Center, drone sea lion surveys were conducted on Península Valdéz that showed significantly quicker survey times. Additionally, sea Lions hidden under coves and Sea Lion Pups hidden behind their mothers, which were previously uncountable, can now be included in the total population count.
+3.  The largest Black-Browed Albatross colony in the world was surveyed with a drone on Steeple and Grand Jason, Falkland Islands (Islas Malvinas) - a deep learning model was used to differentiate between similar-looking Rockhopper Penguins and enumerate each species. Over 250,000 individual Albatross were counted with an accuracy of over 97%. Over 60,000 Penguins were detected with an accuracy of over 85%.
+
+**Caiman:**
+
+**Beaver:**
+
+### Vietnam (rafetus):
+
+### Galapagos (waved albatross):
